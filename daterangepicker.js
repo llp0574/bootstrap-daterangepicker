@@ -1083,7 +1083,9 @@
           });
         }
       } else if (this.opens == 'embed') {
-        this.element.after(this.container);
+        if (!this.element.next().hasClass('opensembed')) {
+          this.element.after(this.container);
+        }
       } else {
         this.container.css({
           top: containerTop,
